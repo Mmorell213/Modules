@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget id="alert_banner" class="Perficient\AlertBanner\Block\Widget\AlertBanner">
+        <label translate="true">Alert Banner</label>
+        <description>Top Banner</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" visible="true" sort_order="30">
+                <label translate="true">Title</label>
+                <description>Banner title</description>
+            </parameter>
+            <parameter name="background_color" xsi:type="block" required="false" visible="true">
+                <label translate="true">Background Color</label>
+                <block class="Perficient\AlertBanner\Block\Widget\Color" />
+            </parameter>
+            <parameter name="content" xsi:type="block" visible="true" sort_order="40">
+                <label translate="true">Content</label>
+                <description>Banner content</description>
+                <block class="Perficient\AlertBanner\Block\Adminhtml\Editor\Wysiwyg" />
+            </parameter>
+            <parameter name="template" xsi:type="select" required="true" visible="true" sort_order="50">
+                <label translate="true">Template</label>
+                <options>
+                    <option name="default" value="Perficient_AlertBanner::widget/alert-banner.phtml" selected="true">
+                        <label translate="true">alert strip template</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+        <containers>
+            <container name="alert.banner">
+                <template name="default" value="default"/>
+            </container>
+        </containers>
+    </widget>
+</widgets>
